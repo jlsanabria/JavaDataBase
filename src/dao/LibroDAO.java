@@ -13,7 +13,7 @@ public interface LibroDAO {
     // READ
     public List<Libro> readLibros();
     // UPDATE
-    public boolean updateLibro(Libro libro);
+    public Libro updateLibro(String codLibro, Libro libro);
     // DELETE
-    public Libro deleteLibro(int id);
+    public boolean deleteLibro(String codLibro);
 }

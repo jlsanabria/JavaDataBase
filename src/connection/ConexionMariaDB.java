@@ -9,10 +9,10 @@ import java.sql.*;
 public class ConexionMariaDB {
     private Connection connection;
 
-    public void crearConexion() {
+    public Connection crearConexion() {
         try {
             //Class.forName("org.postgresql.Driver");
-            String url = "jdbc:mariadb://localhost:3306/mysql";
+            String url = "jdbc:mariadb://localhost:3306/libreria";
             String user = "root";
             String password = "Alw@ys";
             connection = DriverManager.getConnection(url, user, password);
@@ -27,6 +27,7 @@ public class ConexionMariaDB {
                 String version = resultSet.getString(1);
                 System.out.println(version);
             }
+            return connection;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
